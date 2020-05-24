@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  // border-style: solid;
+  // border-color: coral;
+  height: 100vh;
+  background-image: url('https://i.pinimg.com/originals/de/4c/55/de4c55c98658cce36494a75d23cced83.png');
+  background-size: cover;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+.enterAppComponent{
+  
+  font-size: $font-size-large;
+  background-color: salmon;
+  lable{
+    padding: 1em;
+  }
+  input{
+    text-align: left;
+    margin: 1em;
+  }
+}
+.position{
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+}
+
