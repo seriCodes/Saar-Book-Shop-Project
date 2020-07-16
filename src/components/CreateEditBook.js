@@ -29,7 +29,9 @@ export const CreateEditBook = (props) => {
     const CreateEditBook= async (e)=>{
         e.preventDefault();
         
+        // e.persist()
 
+        
         let bookImagUrl
 
         var savedTarget = e.target;
@@ -37,6 +39,8 @@ export const CreateEditBook = (props) => {
         let formLength= savedTarget.elements.length
         let name
 
+        //  await setTimeout(function(){  console.log('during setTimeout' )
+        // ; }, 3000);
 
         ////// checks-look at summary word file /////////
 //         console.log(savedTarget.elements)
@@ -52,7 +56,10 @@ export const CreateEditBook = (props) => {
         if(!!savedTarget.elements[4].value){
             let file= savedTarget.elements[4].files[0]
             name = +new Date() + "-" + file.name;
+            console.log('before first await')
+
             bookImagUrl= await firebase.uploadImage(name,file)
+            console.log('after first await')
 
         }
         
@@ -71,7 +78,10 @@ export const CreateEditBook = (props) => {
               });
         }
         console.log(newBook)
+        console.log('before 2 await')
+
         await firebase.createOrEditBook(newBook,name)
+        console.log('after 2 await')
 
         savedTarget.reset()
 
